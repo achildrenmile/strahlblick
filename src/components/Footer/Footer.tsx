@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { AlertCircle, ExternalLink } from 'lucide-react';
 import { useI18n } from '../../i18n';
+import { useConfig } from '../../hooks/useConfig';
 import { LegalModal } from '../LegalModal/LegalModal';
 
 export function Footer() {
   const { t } = useI18n();
+  const { config } = useConfig();
   const [legalModal, setLegalModal] = useState<'imprint' | 'privacy' | null>(null);
 
   return (
@@ -37,6 +39,24 @@ export function Footer() {
         <div className="border-t border-gray-200 dark:border-gray-700 py-4 bg-white dark:bg-gray-800">
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+              {/* Parent Site Attribution */}
+              {config?.parentSiteName && config?.parentSiteUrl && (
+                <>
+                  <span>
+                    Part of{' '}
+                    <a
+                      href={config.parentSiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 dark:text-blue-400 hover:underline"
+                    >
+                      {config.parentSiteName}
+                    </a>
+                    {' '}Tools
+                  </span>
+                  <span className="hidden sm:inline">•</span>
+                </>
+              )}
               <span>{t.footerText}</span>
               <span className="hidden sm:inline">•</span>
               <div className="flex items-center gap-2">

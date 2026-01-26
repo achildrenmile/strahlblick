@@ -1,20 +1,26 @@
 #!/bin/sh
 
-# Generate config.json from environment variables
-cat > /usr/share/nginx/html/config.json << EOF
+# Generate config.json from environment variables at container startup
+# If no env vars set, the default config.json from build is used
+
+CONFIG_FILE="/usr/share/nginx/html/config.json"
+
+# Only generate config if at least one env var is set
+if [ -n "$PARENT_SITE_URL" ] || [ -n "$PARENT_SITE_LOGO" ] || [ -n "$PARENT_SITE_NAME" ]; then
+  cat > "$CONFIG_FILE" << EOF
 {
-  "siteName": "${SITE_NAME:-Strahlblick}",
-  "siteDescription": "${SITE_DESCRIPTION:-HF-Feldstärke & Sicherheitsabstands-Rechner}",
-  "parentSite": {
-    "name": "${PARENT_SITE_NAME:-}",
-    "url": "${PARENT_SITE_URL:-}",
-    "logo": "${PARENT_SITE_LOGO:-}"
-  }
+  "parentSiteUrl": "${PARENT_SITE_URL:-}",
+  "parentSiteLogo": "${PARENT_SITE_LOGO:-}",
+  "parentSiteName": "${PARENT_SITE_NAME:-}"
 }
 EOF
 
-echo "Generated config.json:"
-cat /usr/share/nginx/html/config.json
+  echo "Generated config.json from environment variables:"
+  cat "$CONFIG_FILE"
+else
+  echo "Using default config.json from build:"
+  cat "$CONFIG_FILE"
+fi
 
 # Start nginx
 exec nginx -g 'daemon off;'
