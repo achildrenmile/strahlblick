@@ -14,7 +14,9 @@ NC='\033[0m' # No Color
 
 # Load environment variables
 if [ -f .env.production ]; then
-    export $(cat .env.production | grep -v '^#' | xargs)
+    set -a
+    source .env.production
+    set +a
 else
     echo -e "${RED}Error: .env.production file not found${NC}"
     echo "Copy .env.production.example to .env.production and configure it"
@@ -54,12 +56,17 @@ fi
 # Step 1: Sync code to Synology
 echo -e "${YELLOW}Step 1: Syncing code to Synology...${NC}"
 
+# Get the GitHub repo URL from local git config
+GITHUB_REPO=$(git remote get-url origin | sed 's/.*github.com[:/]\([^.]*\).*/\1/')
+GITHUB_URL="https://github.com/${GITHUB_REPO}.git"
+
 ssh ${SYNOLOGY_USER}@${SYNOLOGY_HOST} "
-    if [ ! -d ${SYNOLOGY_PATH} ]; then
+    if [ ! -d ${SYNOLOGY_PATH} ] || [ ! -d ${SYNOLOGY_PATH}/.git ]; then
         echo 'Creating directory and cloning repository...'
+        rm -rf ${SYNOLOGY_PATH}
         mkdir -p ${SYNOLOGY_PATH}
         cd ${SYNOLOGY_PATH}
-        git clone https://github.com/$(git remote get-url origin | sed 's/.*github.com[:/]\(.*\)\.git/\1/' | sed 's/.*github.com[:/]\(.*\)/\1/') .
+        git clone ${GITHUB_URL} .
     else
         echo 'Updating existing repository...'
         cd ${SYNOLOGY_PATH}
