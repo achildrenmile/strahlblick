@@ -167,6 +167,39 @@ export const translations = {
     collapse: 'Einklappen',
     meters: 'Meter',
     watts: 'Watt',
+
+    // Footer links
+    footerText: 'Strahlblick • HF-Sicherheitsrechner',
+    imprint: 'Impressum',
+    privacy: 'Datenschutz',
+
+    // Imprint Modal
+    imprintTitle: 'Impressum',
+    imprintInfo: 'Angaben gemäß § 5 ECG und § 25 MedienG',
+    imprintOperator: 'Betreiber',
+    imprintOperatorName: 'Michael Linder',
+    imprintOperatorCallsign: 'OE8YML',
+    imprintOperatorAddress: 'Nötsch 219, 9611 Nötsch',
+    imprintOperatorCountry: 'Österreich',
+    imprintContact: 'Kontakt',
+    imprintContactEmail: 'oe8yml@rednil.at',
+    imprintLiabilityTitle: 'Haftung für Inhalte',
+    imprintLiabilityText: 'Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehmen wir jedoch keine Gewähr. Dieser Rechner dient der Berechnung von HF-Sicherheitsabständen nach ICNIRP-Richtlinien.',
+    imprintCopyrightTitle: 'Urheberrecht',
+    imprintCopyrightText: 'Die durch den Betreiber erstellten Inhalte und Werke auf dieser Website unterliegen dem österreichischen Urheberrecht. Der Quellcode ist unter der MIT-Lizenz auf GitHub verfügbar.',
+
+    // Privacy Modal
+    privacyTitle: 'Datenschutzerklärung',
+    privacyIntro: 'Der Schutz Ihrer persönlichen Daten ist uns wichtig. Diese Datenschutzerklärung informiert Sie über die Datenverarbeitung auf dieser Website.',
+    privacyNoDataTitle: 'Keine Datenerhebung',
+    privacyNoDataText: 'Diese Website ist ein reines Client-Side-Tool und erhebt, speichert oder verarbeitet keine personenbezogenen Daten. Es gibt:',
+    privacyNoDataList: 'Keine Formulare oder Benutzereingaben, keine Cookies (außer der Spracheinstellung im localStorage), kein Tracking oder Analytics, keine serverseitige Datenverarbeitung.',
+    privacyLocalStorageTitle: 'Lokale Speicherung',
+    privacyLocalStorageText: 'Die einzige gespeicherte Information ist Ihre Sprachpräferenz und Theme-Einstellung, die lokal in Ihrem Browser gespeichert wird. Diese Daten werden nicht an Server übertragen.',
+    privacyCloudflareTitle: 'Cloudflare',
+    privacyCloudflareText: 'Diese Website wird über Cloudflare bereitgestellt. Cloudflare kann technisch notwendige Verbindungsdaten verarbeiten.',
+    privacyContactTitle: 'Kontakt',
+    privacyContactText: 'Bei Fragen können Sie uns kontaktieren:',
   },
 
   en: {
@@ -337,6 +370,39 @@ export const translations = {
     collapse: 'Collapse',
     meters: 'meters',
     watts: 'watts',
+
+    // Footer links
+    footerText: 'Strahlblick • RF Safety Calculator',
+    imprint: 'Imprint',
+    privacy: 'Privacy',
+
+    // Imprint Modal
+    imprintTitle: 'Imprint',
+    imprintInfo: 'Information according to Austrian law (§ 5 ECG and § 25 MedienG)',
+    imprintOperator: 'Operator',
+    imprintOperatorName: 'Michael Linder',
+    imprintOperatorCallsign: 'OE8YML',
+    imprintOperatorAddress: 'Nötsch 219, 9611 Nötsch',
+    imprintOperatorCountry: 'Austria',
+    imprintContact: 'Contact',
+    imprintContactEmail: 'oe8yml@rednil.at',
+    imprintLiabilityTitle: 'Liability for Content',
+    imprintLiabilityText: 'The contents of this website have been created with the greatest care. However, we cannot guarantee the accuracy, completeness, or timeliness of the content. This calculator is for calculating RF safety distances according to ICNIRP guidelines.',
+    imprintCopyrightTitle: 'Copyright',
+    imprintCopyrightText: 'The content and works created by the operator on this website are subject to Austrian copyright law. The source code is available under the MIT license on GitHub.',
+
+    // Privacy Modal
+    privacyTitle: 'Privacy Policy',
+    privacyIntro: 'Protecting your personal data is important to us. This privacy policy informs you about data processing on this website.',
+    privacyNoDataTitle: 'No Data Collection',
+    privacyNoDataText: 'This website is a pure client-side tool and does not collect, store, or process any personal data. There are:',
+    privacyNoDataList: 'No forms or user inputs, no cookies (except language preference in localStorage), no tracking or analytics, no server-side data processing.',
+    privacyLocalStorageTitle: 'Local Storage',
+    privacyLocalStorageText: 'The only stored information is your language preference and theme setting, which is stored locally in your browser. This data is not transmitted to servers.',
+    privacyCloudflareTitle: 'Cloudflare',
+    privacyCloudflareText: 'This website is served via Cloudflare. Cloudflare may process technically necessary connection data.',
+    privacyContactTitle: 'Contact',
+    privacyContactText: 'If you have questions, you can contact us:',
   }
 } as const;
 
