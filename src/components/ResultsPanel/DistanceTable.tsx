@@ -23,19 +23,19 @@ export function DistanceTable() {
   return (
     <Card title={t.distanceTable}>
       <div className="overflow-x-auto">
-        <table className="w-full text-sm">
+        <table className="w-full text-sm table-fixed">
           <thead>
             <tr className="border-b border-gray-200 dark:border-gray-700">
-              <th className="text-left py-2 px-2 font-medium text-gray-700 dark:text-gray-300">
+              <th className="text-left py-2 px-2 font-medium text-gray-700 dark:text-gray-300 w-16">
                 {t.distance}
               </th>
-              <th className="text-right py-2 px-2 font-medium text-gray-700 dark:text-gray-300">
+              <th className="text-right py-2 px-2 font-medium text-gray-700 dark:text-gray-300 w-28">
                 {t.powerDensity}
               </th>
-              <th className="text-right py-2 px-2 font-medium text-gray-700 dark:text-gray-300">
+              <th className="text-right py-2 px-2 font-medium text-gray-700 dark:text-gray-300 w-20">
                 {t.generalPublic}
               </th>
-              <th className="text-right py-2 px-2 font-medium text-gray-700 dark:text-gray-300">
+              <th className="text-right py-2 px-2 font-medium text-gray-700 dark:text-gray-300 w-20">
                 {t.occupational}
               </th>
             </tr>
@@ -49,15 +49,15 @@ export function DistanceTable() {
                   ${getRowColor(row.complianceRatioGeneralPublic)}
                 `}
               >
-                <td className="py-2 px-2 font-medium text-gray-900 dark:text-gray-100">
+                <td className="py-2 px-2 font-medium text-gray-900 dark:text-gray-100 whitespace-nowrap">
                   {row.distance} m
                 </td>
-                <td className="py-2 px-2 text-right text-gray-700 dark:text-gray-300">
+                <td className="py-2 px-2 text-right text-gray-700 dark:text-gray-300 whitespace-nowrap">
                   {formatPowerDensity(row.powerDensity)}
                 </td>
                 <td className="py-2 px-2 text-right">
                   <span className={`
-                    font-medium
+                    font-medium whitespace-nowrap
                     ${row.complianceRatioGeneralPublic <= 1
                       ? 'text-green-600 dark:text-green-400'
                       : 'text-red-600 dark:text-red-400'
@@ -68,7 +68,7 @@ export function DistanceTable() {
                 </td>
                 <td className="py-2 px-2 text-right">
                   <span className={`
-                    font-medium
+                    font-medium whitespace-nowrap
                     ${row.complianceRatioOccupational <= 1
                       ? 'text-green-600 dark:text-green-400'
                       : 'text-red-600 dark:text-red-400'
