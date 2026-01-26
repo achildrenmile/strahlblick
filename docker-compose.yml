@@ -1,0 +1,12 @@
+services:
+  strahlblick:
+    build: .
+    ports:
+      - "127.0.0.1:3403:80"
+    restart: unless-stopped
+    environment:
+      - SITE_NAME=Strahlblick
+      - SITE_DESCRIPTION=HF-Feldstärke & Sicherheitsabstands-Rechner
+      - PARENT_SITE_NAME=OE Radio
+      - PARENT_SITE_URL=https://oeradio.at
+      - PARENT_SITE_LOGO=https://oeradio.at/wp-content/uploads/2024/05/cropped-OE-Radio-Logo-1.png
