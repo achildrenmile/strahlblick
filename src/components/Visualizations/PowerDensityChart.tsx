@@ -40,7 +40,7 @@ export function PowerDensityChart() {
   return (
     <Card title={t.powerDensityChart}>
       <ResponsiveContainer width="100%" height={300}>
-        <LineChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
+        <LineChart data={chartData} margin={{ top: 10, right: 30, left: 20, bottom: 40 }}>
           <CartesianGrid
             strokeDasharray="3 3"
             stroke={isDark ? '#374151' : '#e5e7eb'}
@@ -49,8 +49,8 @@ export function PowerDensityChart() {
             dataKey="distance"
             label={{
               value: `${t.distance} (m)`,
-              position: 'bottom',
-              offset: 0,
+              position: 'insideBottom',
+              offset: -5,
               fill: isDark ? '#9ca3af' : '#6b7280',
             }}
             tick={{ fill: isDark ? '#9ca3af' : '#6b7280' }}
@@ -80,8 +80,10 @@ export function PowerDensityChart() {
             }}
           />
           <Legend
+            verticalAlign="bottom"
             wrapperStyle={{
               color: isDark ? '#9ca3af' : '#6b7280',
+              paddingTop: '10px',
             }}
           />
 
