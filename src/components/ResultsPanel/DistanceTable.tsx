@@ -26,16 +26,16 @@ export function DistanceTable() {
         <table className="w-full text-sm table-fixed">
           <thead>
             <tr className="border-b border-gray-200 dark:border-gray-700">
-              <th className="text-left py-2 px-2 font-medium text-gray-700 dark:text-gray-300 w-16">
+              <th className="text-left py-2 px-2 font-medium text-gray-700 dark:text-gray-300 w-[60px]">
                 {t.distance}
               </th>
-              <th className="text-right py-2 px-2 font-medium text-gray-700 dark:text-gray-300 w-28">
+              <th className="text-right py-2 px-2 font-medium text-gray-700 dark:text-gray-300 w-[120px]">
                 {t.powerDensity}
               </th>
-              <th className="text-right py-2 px-2 font-medium text-gray-700 dark:text-gray-300 w-20">
+              <th className="text-right py-2 px-2 font-medium text-gray-700 dark:text-gray-300 w-[70px]">
                 {t.generalPublic}
               </th>
-              <th className="text-right py-2 px-2 font-medium text-gray-700 dark:text-gray-300 w-20">
+              <th className="text-right py-2 px-2 font-medium text-gray-700 dark:text-gray-300 w-[70px]">
                 {t.occupational}
               </th>
             </tr>
